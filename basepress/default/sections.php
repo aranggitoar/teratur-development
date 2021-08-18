@@ -1,17 +1,19 @@
 <?php
-/*
- *	This is the archive page for the top sections with a list style.
+/**
+ * This is the archive page for the top sections with a list style.
+ *
+ * @package Teratur
  */
 
 
-//Get the Knowledge Base object
+// Get the Knowledge Base object.
 $bpkb_knowledge_base = basepress_kb();
 $bpkb_sidebar_position = basepress_sidebar_position( true );
 $bpkb_show_sidebar = is_active_sidebar( 'basepress-sidebar' ) && $bpkb_sidebar_position != 'none';
 $bpkb_content_classes = $bpkb_show_sidebar ? ' show-sidebar' : '';
 
 
-//Get active theme header
+// Get active theme header.
 basepress_get_header( 'basepress' );
 ?>
 

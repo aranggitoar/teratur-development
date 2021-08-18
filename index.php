@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package _s
+ * @package Teratur
  */
 
 get_header();
@@ -19,7 +19,6 @@ get_header();
 
 		<?php
 		if ( have_posts() ) :
-
 			if ( is_home() && ! is_front_page() ) :
 				?>
 				<header>
@@ -49,6 +48,7 @@ get_header();
 
 		endif;
 		?>
+
 
 	</main><!-- #main -->
 

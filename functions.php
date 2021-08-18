@@ -27,7 +27,7 @@ if ( ! function_exists( 'teratur_setup' ) ) :
 		 * If you're building a theme based on _s, use a find and replace
 		 * to change 'teratur' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'Teratur', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'teratur', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ if ( ! function_exists( 'teratur_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'Teratur' ),
+				'menu-1' => esc_html__( 'Primary', 'teratur' ),
 			)
 		);
 
@@ -124,9 +124,9 @@ add_action( 'after_setup_theme', 'teratur_content_width', 0 );
 function teratur_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'Teratur' ),
+			'name'          => esc_html__( 'Sidebar', 'teratur' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'Teratur' ),
+			'description'   => esc_html__( 'Add widgets here.', 'teratur' ),
 			'before_widget' => '<section id="teratur" class="widget teratur">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',

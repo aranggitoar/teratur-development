@@ -2,9 +2,10 @@
 get_header();
 require_once( 'wp-load.php' );
 ?>
-s
+
 <body id="front-page">
-<?php
+
+	<?php
 	$nb = wp_create_nonce( 'nonce_blog' );
 	$nt = wp_create_nonce( 'nonce_tutor' );
 
@@ -15,8 +16,9 @@ s
 	} elseif ( isset( $_REQUEST['_typen'] ) && wp_verify_nonce( $_REQUEST['_typen'], 'nonce_tutor' ) ) {
 		get_template_part( 'template-parts/front-page-tutor' );
 	} else {
-		/* die( __( 'Security check', 'teratur' ) ); */
-	?>
+		?>
+
+
 	<img src="assets/img/telunjuk.jpg"></img>
 	<div id="front-page-card" class="twelve-clmn-cntnr two-rw-cntnr">
 		<section>
@@ -37,10 +39,13 @@ s
 			</div>
 		</section>
 	</div>
-<?php
+
+
+		<?php
 		return;
 	}
-?>
+	?>
+
 </body>
 
 <?php

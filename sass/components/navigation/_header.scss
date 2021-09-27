@@ -1,0 +1,61 @@
+#masthead {
+	align-items: center;
+	background: none;
+	display: flex;
+	flex-direction: column;
+	height: 50px;
+	justify-content: center;
+	margin-bottom: 2rem;
+	width: 100%;
+
+	hr {
+		border-top: 1px solid $color__background-body;
+		width: 90%;
+		margin: 0;
+	}
+
+	svg {
+		filter: $drop-shadow__navigation-elements;
+	}
+
+	nav {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		flex-direction: row;
+		position: relative;
+		justify-content: center;
+		width: 90%;
+
+		div:not(#nav-bg) {
+			position: absolute;
+
+			&:first-child {
+				left: 0;
+
+				li {
+					margin-right: 1rem;
+				}
+			}
+
+			&:last-child {
+				right: 0;
+
+				li {
+					margin-left: 1rem;
+				}
+			}
+
+			a {
+				color: $color__background-body;
+				font: normal 200 1rem Poppins;
+				letter-spacing: -.3px;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	@media (orientation: portrait) {
+	}
+}

@@ -15,7 +15,9 @@ if ( ! defined( 'ABSPATH' ) )
 	exit;
 
 global $post, $authordata;
-$profile_url = tutor_utils()->profile_url($authordata->ID);
+$instructor_id = IP_Tutor_Public::get_current_course_instructor_post_id( get_the_ID() );
+$profile_url = get_post( $instructor_id )->guid;
+$profile_name = IP_Tutor_Public::get_current_course_instructor_name( get_the_ID() );
 ?>
 
 <div class="tutor-single-course-segment tutor-single-course-lead-info">
@@ -56,11 +58,11 @@ $profile_url = tutor_utils()->profile_url($authordata->ID);
             <?php if ( !$disable_course_author){ ?>
                 <li class="tutor-single-course-author-meta">
                     <div class="tutor-single-course-avatar">
-                        <a href="<?php echo $profile_url; ?>"> <?php echo tutor_utils()->get_tutor_avatar($post->post_author); ?></a>
+                        <a href="<?php echo $profile_url; ?>"> <?php echo get_the_post_thumbnail( $instructor_id, 'tutor-single-course-avatar' ); ?></a>
                     </div>
                     <div class="tutor-single-course-author-name">
                         <span><?php _e('by', 'tutor'); ?></span>
-                        <a href="<?php echo tutor_utils()->profile_url($authordata->ID); ?>"><?php echo get_the_author(); ?></a>
+                        <a href="<?php echo $profile_url; ?>"><?php echo $profile_name; ?></a>
                     </div>
                 </li>
             <?php } ?>
@@ -110,7 +112,7 @@ $profile_url = tutor_utils()->profile_url($authordata->ID);
                     <span><?php esc_html_e('Duration', 'tutor') ?></span>
                     <?php echo $course_duration; ?>
                 </li>
-            <?php }
+           <?php }
             
             if( !$disable_total_enrolled){ ?>
                 <li>
@@ -147,3 +149,4 @@ $profile_url = tutor_utils()->profile_url($authordata->ID);
 	<?php do_action('tutor_course/single/excerpt/after'); ?>
 
 </div>
+ 

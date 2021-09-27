@@ -1,0 +1,76 @@
+// Reference: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+$breakpoints: (
+	s: 576px,
+	m: 768px,
+	l: 992px,
+	xl: 1200px,
+	xxl: 1400px
+);
+
+/*
+Get a specified breakpoint from the "breakpoints" map.
+1. If the map exists: get the value and write a minimal width media query.
+2. If the map doesn't exists: log a warning.
+*/
+@mixin more-than($breakpoint) {
+
+	@if map-has-key($breakpoints, $breakpoint) {
+
+		$breakpoint-value: map-get($breakpoints, $breakpoint);
+
+		@media (min-width: $breakpoint-value) {
+			@content;
+		}
+
+	} @else {
+		@warn 'Invalid breakpoint: #{&breakpoint}.';
+	}
+
+}
+
+/*
+The same thing as above but writes a maximal width media query.
+*/
+@mixin less-than($breakpoint) {
+
+	@if map-has-key($breakpoints, $breakpoint) {
+
+		$breakpoint-value: map-get($breakpoints, $breakpoint);
+
+		@media (max-width: $breakpoint-value) {
+			@content;
+		}
+
+	} @else {
+		@warn 'Invalid breakpoint: #{&breakpoint}.';
+	}
+
+}
+
+/*
+The same thing as above but writes both minimum and maximum width media query.
+*/
+@mixin between($lower, $upper) {
+
+	@if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+
+		$lower-breakpoint: map-get($breakpoints, $lower);
+		$upper-breakpoint: map-get($breakpoints, $upper);
+
+		@media (min-width: $lower-breakpoint) and (max-width: $upper-breakpoint) {
+			@content;
+		}
+
+	} @else {
+
+		@if (map-has-key($breakpoints, $lower) == false) {
+			@warn 'Invalid lower breakpoint: #{&lower}.';
+		}
+
+		@if (map-has-key($breakpoints, $upper) == false) {
+			@warn 'Invalid upper breakpoint: #{&upper}.';
+		}
+
+	}
+
+}

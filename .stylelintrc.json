@@ -1,14 +1,15 @@
 {
     "extends": [
-        "stylelint-config-wordpress/scss"
+        "@wordpress/stylelint-config/scss"
     ],
     "ignoreFiles": [
         "sass/_normalize.scss"
     ],
     "rules": {
+				"block-no-empty": null,
         "font-family-no-missing-generic-family-keyword": null,
         "no-descending-specificity": null,
-        "block-no-empty": null,
+				"number-leading-zero": null,
         "no-duplicate-selectors": null,
         "font-family-no-duplicate-names": null,
         "selector-class-pattern": null

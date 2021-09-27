@@ -1,0 +1,53 @@
+#tutor-index-main-info-container {
+
+	h1 {
+		border-bottom: 1px solid #fff;
+		font-size: 3rem;
+		text-align: center;
+		margin: 2rem 0;
+	}
+
+	#tutor-index-main-info-blurb-container {
+		text-align: center;
+	}
+
+	#tutor-index-main-info-navigation-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	#tutor-index-main-info-description {
+		text-align: center;
+
+		p:first-child {
+			font: normal 400 1.5rem Poppins;
+			margin: 2rem 0;
+		}
+	}
+
+	@include less-than(s) {
+		max-width: $size__page-text-max-width-xs;
+	}
+
+	@include more-than(s) {
+		max-width: $size__page-text-max-width-s;
+	}
+
+	@include more-than(m) {
+		max-width: $size__page-text-max-width-m;
+	}
+
+	@include more-than(l) {
+		max-width: $size__page-text-max-width-l;
+	}
+
+	@include more-than(xl) {
+		max-width: $size__page-text-max-width-xl;
+	}
+
+	@include more-than(xxl) {
+		max-width: $size__page-text-max-width-xxl;
+	}
+
+}

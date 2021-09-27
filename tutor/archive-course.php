@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Template for displaying courses
  *
@@ -13,12 +12,18 @@
  */
 
 get_header();
-
-$course_filter = (bool) tutor_utils()->get_option('course_archive_filter', false);
-$supported_filters = tutor_utils()->get_option('supported_course_filters', array());
-
-if ($course_filter && count($supported_filters)) {
 ?>
+
+<?php
+
+get_template_part( 'template-parts/tutor-index-main-info' );
+
+$course_filter = (bool) tutor_utils()->get_option( 'course_archive_filter', false );
+
+$supported_filters = tutor_utils()->get_option( 'supported_course_filters', array() );
+
+if ( $course_filter && count( $supported_filters ) ) {
+	?>
 	<div class="tutor-course-filter-wrapper">
 		<div class="tutor-course-filter-container">
 			<?php tutor_load_template('course-filter.filters'); ?>

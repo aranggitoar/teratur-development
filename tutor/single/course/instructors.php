@@ -11,86 +11,58 @@
  * @version 1.4.3
  */
 
-
-
 do_action('tutor_course/single/enrolled/before/instructors');
 
+$instructor_id = IP_Tutor_Public::get_current_course_instructor_post_id( get_the_ID() );
+$profile_url = get_post( $instructor_id )->guid;
+$profile_name = IP_Tutor_Public::get_current_course_instructor_name( get_the_ID() );
+$short_biography = IP_Tutor_Public::get_current_course_instructor_bio( get_the_ID() );
+$job_title = IP_Tutor_Public::get_current_course_instructor_job_title( get_the_ID() );
+
 $instructors = tutor_utils()->get_instructors_by_course();
-if ($instructors){
-	$count = is_array($instructors) ? count($instructors) : 0;
 	
-	?>
-	<h4 class="tutor-segment-title"><?php $count>1 ? _e('About the instructors', 'tutor') : _e('About the instructor', 'tutor'); ?></h4>
+?>
+<h4 class="tutor-segment-title"><?php _e('About the instructor', 'tutor'); ?></h4>
 
-	<div class="tutor-course-instructors-wrap tutor-single-course-segment" id="single-course-ratings">
-		<?php
-		foreach ($instructors as $instructor){
-		    $profile_url = tutor_utils()->profile_url($instructor->ID);
-			?>
-			<div class="single-instructor-wrap">
-				<div class="single-instructor-top">
-                    <div class="tutor-instructor-left">
-                        <div class="instructor-avatar">
-                            <a href="<?php echo $profile_url; ?>">
-                                <?php echo tutor_utils()->get_tutor_avatar($instructor->ID); ?>
-                            </a>
-                        </div>
-
-                        <div class="instructor-name">
-                            <h3><a href="<?php echo $profile_url; ?>"><?php echo $instructor->display_name; ?></a> </h3>
-                            <?php
-                            if ( ! empty($instructor->tutor_profile_job_title)){
-                                echo "<h4>{$instructor->tutor_profile_job_title}</h4>";
-                            }
-                            ?>
-                        </div>
-                    </div>
-					<div class="instructor-bio">
-						<?php echo $instructor->tutor_profile_bio ?>
-					</div>
+<div class="tutor-course-instructors-wrap tutor-single-course-segment" id="single-course-ratings">
+	<div class="single-instructor-wrap">
+		<div class="single-instructor-top">
+			<div class="tutor-instructor-left">
+				<div class="instructor-avatar">
+					<a href="<?php echo $profile_url; ?>">
+						<?php echo get_the_post_thumbnail( $instructor_id, 'tutor-text-avatar' ); ?>
+					</a>
 				</div>
 
-                <?php
-                $instructor_rating = tutor_utils()->get_instructor_ratings($instructor->ID);
-                ?>
-
-				<div class="single-instructor-bottom">
-					<div class="ratings">
-						<span class="rating-generated">
-							<?php tutor_utils()->star_rating_generator($instructor_rating->rating_avg); ?>
-						</span>
-
+				<div class="instructor-name">
+						<h3>
+							<a href="<?php echo $profile_url; ?>"><?php echo $profile_name; ?></a>
+						</h3>
 						<?php
-						echo " <span class='rating-digits'>{$instructor_rating->rating_avg}</span> ";
-						echo " <span class='rating-total-meta'>({$instructor_rating->rating_count} ".__('ratings', 'tutor').")</span> ";
+						if ( ! empty( $job_title ) ) {
+								echo "<h4>{$job_title}</h4>";
+						} else {
+							echo "<h4>NIL</h4>";
+						}
 						?>
-					</div>
-
-					<div class="courses">
-						<p>
-							<i class='tutor-icon-mortarboard'></i>
-							<?php echo tutor_utils()->get_course_count_by_instructor($instructor->ID); ?> <span class="tutor-text-mute"> <?php _e('Courses', 'tutor'); ?></span>
-						</p>
-					</div>
-
-					<div class="students">
-						<?php
-						$total_students = tutor_utils()->get_total_students_by_instructor($instructor->ID);
-						?>
-
-						<p>
-							<i class='tutor-icon-user'></i>
-							<?php echo $total_students; ?>
-							<span class="tutor-text-mute">  <?php _e('students', 'tutor'); ?></span>
-						</p>
-					</div>
 				</div>
 			</div>
-			<?php
-		}
-		?>
-	</div>
-	<?php
-}
+			<div class="instructor-bio">
+				<?php 
+				if ( ! empty( $short_biography ) ) {
+					echo $short_biography;
+				} else {
+					echo "NIL";
+				}
+				?>
+			</div>
 
+		</div>
+	</div>
+</div>
+
+<?php
 do_action('tutor_course/single/enrolled/after/instructors');
+?>
+
+

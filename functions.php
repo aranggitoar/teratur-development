@@ -47,10 +47,17 @@ if ( ! function_exists( 'teratur_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		/*
+		 * Add some custom image sizes for IP Tutor plugin.
+		 */
+		add_image_size( 'tutor-single-course-avatar', 21, 21, true );
+		add_image_size( 'tutor-text-avatar', 50, 50, true );
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'teratur' ),
+				'special-menu'  => esc_html__( 'Special', 'teratur' ),
+				'common-menu'   => esc_html__( 'Common', 'teratur' ),
 			)
 		);
 
@@ -77,8 +84,8 @@ if ( ! function_exists( 'teratur_setup' ) ) :
 			apply_filters(
 				'teratur_custom_background_args',
 				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
+					'default-color' => '',
+					'default-image' => 'https://unsplash.com/photos/RmNAdoJNFJs',
 				)
 			)
 		);
@@ -188,3 +195,59 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Change the slugs for Tutor LMS.
+ */
+add_filter( 'tutor_courses_base_slug', 'alkitabkita_course_slug', 10, 0 );
+add_filter( 'tutor_lesson_base_slug', 'alkitabkita_lesson_slug', 10, 0 );
+
+function alkitabkita_course_slug()
+{
+	return 'kursus';
+}
+
+function alkitabkita_lesson_slug()
+{
+	return 'pelajaran';
+}
+
+/**
+ * Deregister scripts for improved page load speed.
+ */
+function alkitabkita_deregister_scripts()
+{
+	if ( get_post_type() === 'courses' || is_front_page() ) {
+		wp_deregister_script( 'bible-reader' );
+		wp_dequeue_script( 'bible-reader' );
+		wp_deregister_style( 'bible-reader' );
+		wp_dequeue_style( 'bible-reader' );
+	}
+}
+
+add_action( 'wp_enqueue_scripts', 'alkitabkita_deregister_scripts' );
+
+/**
+ * Deactivate Yoast's title configuration.
+ */
+add_filter('wpseo_title', '__return_empty_string');
+
+/**
+ * Replace the name for Tutor LMS's courses post type archive page.
+ */
+function override_courses_post_type_archive_title($title)
+{
+	return 'Kursus';
+}
+
+add_filter( 'post_type_archive_title', 'override_courses_post_type_archive_title', 'courses' );
+
+/**
+ * Replace all title separator.
+ */
+function replace_all_title_separator($sep)
+{
+	return '|';
+}
+
+add_filter( 'document_title_separator', 'replace_all_title_separator' );

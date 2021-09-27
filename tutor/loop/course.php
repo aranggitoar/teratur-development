@@ -1,5 +1,4 @@
 <?php
-
 /**
  * A single course loop
  *
@@ -10,7 +9,6 @@
  * @package TutorLMS/Templates
  * @version 1.4.3
  */
-
 
 do_action('tutor_course/loop/before_content');
 
@@ -23,10 +21,6 @@ do_action('tutor_course/loop/after_header');
 
 
 do_action('tutor_course/loop/start_content_wrap');
-
-do_action('tutor_course/loop/before_rating');
-do_action('tutor_course/loop/rating');
-do_action('tutor_course/loop/after_rating');
 
 do_action('tutor_course/loop/before_title');
 do_action('tutor_course/loop/title');

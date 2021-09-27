@@ -1,6 +1,33 @@
 .main-navigation {
 	display: block;
 	width: 100%;
+	z-index: 1;
+
+	a.menu-toggle {
+		display: none;
+
+		span {
+			background-color: $color__background-body;
+			height: 1.25px;
+		}
+
+		span:first-child {
+			width: 1.5rem;
+		}
+
+		span:last-child {
+			width: 1rem;
+		}
+	}
+
+	#nav-bg {
+		background-color: $color__primary-green;
+		display: none;
+		height: 100vh;
+		position: sticky;
+		width: 100vw;
+		z-index: 0;
+	}
 
 	ul {
 		display: none;
@@ -71,14 +98,22 @@
 
 /* Small menu. */
 .menu-toggle,
-.main-navigation.toggled ul {
+.main-navigation.toggled ul,
+.main-navigation.toggled #nav-bg {
 	display: block;
 }
 
 @media screen and (min-width: 37.5em) {
 
-	.menu-toggle {
-		display: none;
+	a.menu-toggle {
+		background: inherit;
+		border: 0;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		height: .75rem;
+		justify-content: space-between;
+		width: 1.5rem;
 	}
 
 	.main-navigation ul {

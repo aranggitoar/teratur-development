@@ -1,14 +1,22 @@
 /* Navigation
 --------------------------------------------- */
+@import "navigation/header";
+
+/* Navigation
+--------------------------------------------- */
 @import "navigation/navigation";
+
+/* Front page
+--------------------------------------------- */
+@import "content/front-page";
 
 /* Posts and pages
 --------------------------------------------- */
 @import "content/posts-and-pages";
 
-/* Front page
+/* Tutor archive (index) page
 --------------------------------------------- */
-@import "content/front-page";
+@import "content/tutor-archive";
 
 /* Comments
 --------------------------------------------- */
@@ -29,3 +37,7 @@
 /* Galleries
 --------------------------------------------- */
 @import "media/galleries";
+
+/* Background images
+--------------------------------------------- */
+@import "media/background-images";

@@ -1,3 +1,36 @@
 body {
-	background: $color__background-body; // Fallback for when there is no custom background color defined.
+	background: $color__primary-green; // Fallback for when there is no custom background color defined.
+	color: $color__background-body;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-weight: 300;
+	height: 100vh;
+
+	&::before {
+		content: "";
+		height: 100%;
+		position: fixed;
+		width: 100%;
+		z-index: -1000;
+	}
+
+	*:not(#background-layer, #front-page-card) {
+
+		@include more-than(s) {
+			max-width: $size__page-text-max-width-s;
+		}
+
+		@include more-than(m) {
+			max-width: $size__page-text-max-width-m;
+		}
+
+		@include more-than(l) {
+			max-width: $size__page-text-max-width-l;
+		}
+
+		@include more-than(xl) {
+			max-width: $size__page-text-max-width-xl;
+		}
+	}
 }

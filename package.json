@@ -16,12 +16,6 @@
   "bugs": {
     "url": "https://github.com/aranggitoar/teratur/issues"
   },
-  "devDependencies": {
-    "@wordpress/scripts": "^12.1.0",
-    "dir-archiver": "^1.1.1",
-    "node-sass": "^4.14.1",
-    "rtlcss": "^2.5.0"
-  },
   "rtlcssConfig": {
     "options": {
       "autoRename": false,
@@ -36,12 +30,21 @@
     "map": false
   },
   "scripts": {
-    "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
-    "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "watch": "sass --watch sass/:./",
+		"watch:parcel": "parcel watch sass/style.scss --dist-dir ./",
+		"build": "parcel build sass/style.scss --dist-dir ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "compile:css": "sass sass/:./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "bundle": "dir-archiver --src . --dest ../../teratur/teratur.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map",
     "deploy": "cp -r 404.php archive.php basepress/ comments.php footer.php front-page.php functions.php header.php home.php inc/ index.php js/ languages/ LICENSE page.php readme.txt screenshot.png search.php sidebar.php single.php style.css style-rtl.css template-parts/ tutor/ woocommerce/ woocommerce.css ../../teratur/"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^18.0.1",
+    "dir-archiver": "^1.2.0",
+    "parcel": "^2.0.0-rc.0",
+    "rtlcss": "^3.3.0",
+    "sass": "^1.42.1"
   }
 }

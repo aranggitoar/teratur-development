@@ -78,6 +78,19 @@ if ( ! function_exists( 'teratur_setup' ) ) :
 			)
 		);
 
+		// Set up the WordPress core custom header feature.
+		add_theme_support(
+			'custom-header',
+			array(
+				'default-image'      => "https://unsplash.com/photos/9BlA8vech74",
+				'default-text-color' => 'fff',
+				'width'              => 1000,
+				'height'             => 250,
+				'flex-width'         => true,
+				'flex-height'        => true,
+			)
+		);
+
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',
@@ -233,6 +246,8 @@ add_action( 'wp_enqueue_scripts', 'alkitabkita_deregister_scripts' );
 add_filter('wpseo_title', '__return_empty_string');
 
 /**
+ * TODO: Localize the page title without hardcoding the title!
+ *
  * Replace the name for Tutor LMS's courses post type archive page.
  */
 function override_courses_post_type_archive_title($title)

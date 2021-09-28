@@ -1,7 +1,7 @@
 <?php
 /**
- * TODO: Find out a way to localize the page title without hardcoding
- * the title.
+ * TODO: Add an SVG alternative for adding the custom logo!
+ * (Maybe as a plugin)
  *
  * The header for Teratur
  *

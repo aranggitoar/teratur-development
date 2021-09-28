@@ -13,6 +13,7 @@
 ?>
 
 <section id="tutor-index-main-info-container">
+<?php get_header_image(); ?>
 	<h1>Kursus Alkitab Kita</h1>
 	<div id="tutor-index-main-info-blurb-container">
 		<p>Kami menyediakan kursus alkitabiah yang komprehensif untuk melengkapi secara rohani dan intelektual setiap orang percaya agar dapat menyelesaikan Amanat Agung.</p>

@@ -469,7 +469,7 @@ big {
 /* Elements
 --------------------------------------------- */
 html {
-  font-size: calc(1em + 1vw);
+  font-size: calc(0.1em + 1vw);
 }
 
 body {
@@ -899,6 +899,7 @@ textarea {
   height: 100%;
   font: normal 300 1.5rem Poppins;
   margin: 0;
+  justify-content: space-between;
   position: relative;
   text-decoration: none;
   width: 100%;
@@ -911,12 +912,9 @@ textarea {
   padding-left: 1rem;
 }
 #front-page-card section:last-child div a p:last-child {
-  position: absolute;
-  font-size: 3.25rem;
+  font-size: 3em;
   font-weight: 100;
-  right: 1rem;
-  top: 0;
-  bottom: 0;
+  padding-right: 1rem;
 }
 
 /* Posts and pages
@@ -948,7 +946,6 @@ textarea {
 /* Tutor archive (index) page
 --------------------------------------------- */
 #tutor-index-main-info-container h1 {
-  border-bottom: 1px solid #fff;
   font-size: 3rem;
   text-align: center;
   margin: 2rem 0;

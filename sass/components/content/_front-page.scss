@@ -21,21 +21,26 @@
 	margin: 0 8vw;
 
 	section:first-child {
-		margin-bottom: 1.5rem;
+		margin-bottom: 1em;
+		text-align: center;
 
 		h1 {
-			font: italic 600 5rem Poppins;
+			font: italic 600 4.5em Poppins;
 			margin: 0;
 		}
 
 		h2 {
-			font: italic 400 2.5rem Poppins;
+			font: italic 400 2.25em Poppins;
 			margin: 0;
 		}
 	}
 
 	section:last-child {
-		margin-top: 1.5rem;
+		align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+		margin-top: 1em;
 
 		div {
 			align-items: center;
@@ -43,10 +48,10 @@
 			box-shadow: 2px 2px 6px rgba(0, 0, 0, .15);
 			border-radius: 5px;
 			display: flex;
-			height: 10vh;
-			justify-content: flex-start;
-			max-height: 90px;
-			margin: 1.5rem 0;
+			height: 5.5em;
+			justify-content: center;
+			max-height: 5.5em;
+			margin: 1em 0;
 			position: relative;
 			transition: all 400ms;
 			width: 60%;
@@ -75,7 +80,7 @@
 				color: $color__background-body;
 				display: flex;
 				height: 100%;
-				font: normal 300 1.5rem Poppins;
+				font: normal 300 1.25em Poppins;
 				margin: 0;
 				justify-content: space-between;
 				position: relative;
@@ -97,6 +102,30 @@
 					padding-right: 1rem;
 				}
 			}
+		}
+	}
+}
+
+@media (orientation: landscape) {
+
+	#front-page-card {
+
+		section:first-child {
+			text-align: initial;
+
+      h1 {
+        font-size: 5em;
+      }
+
+      h2 {
+        font-size: 2.5em;
+      }
+		}
+
+		section:last-child {
+      align-items: flex-start;
+			text-align: initial;
+
 		}
 	}
 }

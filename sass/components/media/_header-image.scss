@@ -1,0 +1,15 @@
+#site-header {
+
+	img {
+
+		::before {
+			background-color: $color__primary-green;
+			content: "";
+			height: 100%;
+			opacity: 0.3;
+			position: absolute;
+			width: 100%;
+			z-index: 2;
+		}
+	}
+}

@@ -13,19 +13,23 @@
 ?>
 
 <section id="tutor-index-main-info-container">
-<?php if ( get_header_image() ) : ?>
+	<style>
+		#site-header::after {
+			width: <?php echo absint( get_theme_support( 'custom-header', 'width' ) ); ?>px;
+			height: <?php echo absint( get_theme_support( 'custom-header', 'height' ) ); ?>px;
+		}
+	</style>
 	<div id="site-header">
 		<img src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 	</div>
-<?php endif; ?>
 	<h1>Kursus Alkitab Kita</h1>
 	<div id="tutor-index-main-info-blurb-container">
 		<p>Kami menyediakan kursus alkitabiah yang komprehensif untuk melengkapi secara rohani dan intelektual setiap orang percaya agar dapat menyelesaikan Amanat Agung.</p>
 	</div>
 	<div id="tutor-index-main-info-navigation-container">
-		<a href="<?php echo esc_attr( get_permalink( get_page_by_title( 'Tentang Kursus Alkitab Kita' ) ) ); ?>"<span>Tentang</span></a>
-		<a href="<?php echo esc_attr( get_permalink( get_page_by_title( 'Kurikulum Kursus Alkitab Kita' ) ) ); ?>"<span>Kurikulum</span></a>
-		<a href="#tutor-course-filter-loop-container"<span>Pilih Kursus</span></a>
+		<a class="teratur-button" href="<?php echo esc_attr( get_permalink( get_page_by_title( 'Tentang Kursus Alkitab Kita' ) ) ); ?>"<span>Tentang</span></a>
+		<a class="teratur-button" href="<?php echo esc_attr( get_permalink( get_page_by_title( 'Kurikulum Kursus Alkitab Kita' ) ) ); ?>"<span>Kurikulum</span></a>
+		<a class="teratur-button" href="#tutor-course-filter-loop-container"<span>Pilih Kursus</span></a>
 	</div>
 	<div id="tutor-index-main-info-description">
 		<p>Gratis - Lengkap - Daring - Kursus Alkitabiah</p>

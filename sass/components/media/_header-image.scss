@@ -1,15 +1,18 @@
 #site-header {
 
 	img {
+		border-radius: 5px;
+		z-index: 1;
+	}
 
-		::before {
-			background-color: $color__primary-green;
-			content: "";
-			height: 100%;
-			opacity: 0.3;
-			position: absolute;
-			width: 100%;
-			z-index: 2;
-		}
+	&::after {
+		background-color: var(--color_primary);
+		height: 100%;
+		left: 0;
+		opacity: 0.3;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 2;
 	}
 }

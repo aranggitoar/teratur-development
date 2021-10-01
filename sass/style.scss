@@ -25,14 +25,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Generic
-	- Normalize
-	- Box sizing
 # Base
 	- Typography
 	- Elements
 	- Links
 	- Forms
+	- Normalize
+	- Box sizing
 ## Layouts
 # Components
 	- Navigation
@@ -57,14 +56,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Generic
 --------------------------------------------------------------*/
 
-/* Normalize
---------------------------------------------- */
-@import "generic/normalize";
-
-/* Box sizing
---------------------------------------------- */
-@import "generic/box-sizing";
-
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
@@ -88,6 +79,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Jetpack infinite scroll
 --------------------------------------------- */
 @import "plugins/jetpack/infinite-scroll";
+
+/* Stylesheet for TutorLMS
+--------------------------------------------- */
+@import "plugins/tutorlms/tutorlms";
 
 /*--------------------------------------------------------------
 # Utilities

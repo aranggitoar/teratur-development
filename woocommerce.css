@@ -4,6 +4,15 @@ Theme Name: Teratur
 WooCommerce styles override
 */
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap);
+:root {
+  --color_primary: #083835;
+  --color_primary-2: #0e655f;
+  --color_primary-3: #149289;
+  --color_complementary: #38080b;
+  --color_complementary-2: #650e14;
+  --color_complementary-3: #92141d;
+}
+
 /*
 Get a specified breakpoint from the "breakpoints" map.
 1. If the map exists: get the value and write a minimal width media query.
@@ -33,10 +42,10 @@ table.shop_table_responsive tr td::before {
   content: attr(data-title) ": ";
   float: left;
 }
-table.shop_table_responsive tr td.product-remove a {
+table.shop_table_responsive tr td.product-emove a {
   text-align: left;
 }
-table.shop_table_responsive tr td.product-remove::before {
+table.shop_table_responsive tr td.product-emove::before {
   display: none;
 }
 table.shop_table_responsive tr td.actions::before, table.shop_table_responsive tr td.download-actions::before {

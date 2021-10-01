@@ -1,5 +1,5 @@
 body {
-	background: $color__primary-green; // Fallback for when there is no custom background color defined.
+	background: var(--color_primary); // Fallback for when there is no custom background color defined.
 	color: $color__background-body;
 	display: flex;
 	flex-direction: column;

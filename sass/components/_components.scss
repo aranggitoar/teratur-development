@@ -1,4 +1,8 @@
-/* Navigation
+/* Button
+--------------------------------------------- */
+@import "navigation/button";
+
+/* Header
 --------------------------------------------- */
 @import "navigation/header";
 
@@ -13,10 +17,6 @@
 /* Posts and pages
 --------------------------------------------- */
 @import "content/posts-and-pages";
-
-/* Tutor archive (index) page
---------------------------------------------- */
-@import "content/tutor-archive";
 
 /* Comments
 --------------------------------------------- */

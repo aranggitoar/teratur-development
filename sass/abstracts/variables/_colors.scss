@@ -19,5 +19,13 @@ $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-$color__primary-green: #083835;
 $color__transparent: #0000;
+
+:root {
+	--color_primary: #083835;
+	--color_primary-2: #0e655f;
+	--color_primary-3: #149289;
+	--color_complementary: #38080b;
+	--color_complementary-2: #650e14;
+	--color_complementary-3: #92141d;
+}

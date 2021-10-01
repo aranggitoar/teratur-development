@@ -5,7 +5,7 @@
 	flex-direction: column;
 	height: 50px;
 	justify-content: center;
-	margin-bottom: 2rem;
+	margin-bottom: 2em;
 	width: 100%;
 
 	hr {
@@ -34,7 +34,7 @@
 				left: 0;
 
 				li {
-					margin-right: 1rem;
+					margin-right: 1em;
 				}
 			}
 
@@ -42,13 +42,13 @@
 				right: 0;
 
 				li {
-					margin-left: 1rem;
+					margin-left: 1em;
 				}
 			}
 
 			a {
 				color: $color__background-body;
-				font: normal 200 1rem Poppins;
+				font: normal 200 1em Poppins;
 				letter-spacing: -.3px;
 				text-decoration: none;
 				text-transform: uppercase;

@@ -10,6 +10,20 @@ input[type="submit"] {
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
 
+	&.teratur-button {
+		background: var(--color_complementary);
+		border-radius: 5px;
+		color: #fff;
+		display: block;
+		font-weight: 500;
+		height: fit-content;
+		line-height: 25px;
+		padding: 10px;
+		text-align: center;
+		width: fit-content;
+	}
+
+
 	&:hover {
 		border-color: $color__border-button-hover;
 	}

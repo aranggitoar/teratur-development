@@ -1,14 +1,15 @@
 a {
-	color: $color__link;
+	color: var(--color_complementary-5);
+	text-decoration: none;
 
 	&:visited {
-		color: $color__link-visited;
+		color: inherit;
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color__link-hover;
+		color: var(--color_complementary-4);
 	}
 
 	&:focus {

@@ -1,0 +1,43 @@
+.site-footer {
+	display: flex;
+	flex-direction: column;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.container {
+
+		.row {
+			display: flex;
+			flex-direction: column;
+
+			div {
+				margin: 0 1em;
+			}
+
+			div:last-child {
+				min-width: 30%;
+			}
+		}
+	}
+
+	.copyright-text {
+		font-style: italic;
+	}
+}
+
+@media (orientation: landscape) {
+
+	.site-footer {
+
+		.container {
+
+			.row {
+				flex-direction: row;
+			}
+		}
+	}
+}

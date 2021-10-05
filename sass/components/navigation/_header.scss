@@ -5,14 +5,8 @@
 	flex-direction: column;
 	height: 50px;
 	justify-content: center;
-	margin-bottom: 2em;
+	margin: 3em 0 4em;
 	width: 100%;
-
-	hr {
-		border-top: 1px solid $color__background-body;
-		width: 90%;
-		margin: 0;
-	}
 
 	svg {
 		filter: $drop-shadow__navigation-elements;
@@ -48,7 +42,7 @@
 
 			a {
 				color: $color__background-body;
-				font: normal 200 1em Poppins;
+				font: normal 300 1em Poppins;
 				letter-spacing: -.3px;
 				text-decoration: none;
 				text-transform: uppercase;
